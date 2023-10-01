@@ -8,7 +8,7 @@ const page = () => {
   const [tasks, setTasks] = useState([]);
 
   const submitHandler = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // prevents submission of the form and reloading of page
     setTasks([...tasks, { title, desc }]);
     // console.log(tasks)
     setTitle("");
@@ -41,6 +41,7 @@ const page = () => {
       <h1 className="bg-black text-white text-5xl p-5 text-center font-semibold">To-Do List</h1>
 
       <form onSubmit={submitHandler} className="flex justify-center">
+        {/* 2 way binding */}
         <input type="text" className="border-gray-200 px-5 py-3 m-5 border-2" placeholder="Enter title here..." value={title} onChange={(e) => setTitle(e.target.value)} />
 
         <input type="text" className="border-gray-200 px-5 py-3 m-5 border-2" placeholder="Enter description here..." value={desc} onChange={(e) => setDesc(e.target.value)} />

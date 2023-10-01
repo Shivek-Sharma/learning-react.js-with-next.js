@@ -30,8 +30,9 @@ const page = () => {
                 <button className="bg-red-500 rounded p-3 text-white font-semibold" onClick={getImages}>Get Images</button>
 
                 <div className="mt-3">
+                    {/* It's best practice to use the 'map' method instead of 'forEach' because it returns an array of JSX elements that can be easily rendered. */}
                     {images.map((img, i) => {
-                        return <img key={i} src={img.download_url} width={300} height={300} className="rounded m-10 inline-block" />
+                        return (<img key={i} src={img.download_url} width={300} height={300} className="rounded m-10 inline-block" />)
                     })}
                 </div>
             </div>
